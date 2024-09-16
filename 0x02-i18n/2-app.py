@@ -20,6 +20,9 @@ class Config:
 
 @babel.localeselector
 def get_locale():
+    """
+    Get the locale of the user
+    """
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
