@@ -3,7 +3,6 @@
 Implement a class for MRU caching policy
 """
 from base_caching import BaseCaching
-from collections import deque
 
 
 class MRUCache(BaseCaching):
@@ -22,9 +21,6 @@ class MRUCache(BaseCaching):
         Put an item in the cache
         """
         if (key is not None) and (item is not None):
-            if key in self.cache_data:
-                del self.cache_data[key]
-
             self.cache_data.update({key: item})
             if len(self.cache_data) > self.MAX_ITEMS:
                 k = self._item_age.pop()
